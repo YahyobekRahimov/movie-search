@@ -221,6 +221,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    cursor: pointer;
 }
 
 .trending__movie__img-wrapper {
@@ -236,6 +237,7 @@
     margin-left: auto;
     margin-bottom: auto;
     margin-top: auto;
+    width: 60px;
 }
 .trending__movie-length {
     position: absolute;
@@ -248,5 +250,93 @@
     padding: 4px;
 }
 .trending__movies-rating {
-    
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    top: 8px;
+    right: 16px;
+}
+.trending__movie__description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+        color: $white;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+        li {
+            color: $white;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 10px;
+            background: $red;
+            padding: 8px;
+        }
+    }
+}
+
+// * New release
+
+.new-release {
+    margin-top: 72px;
+    margin-bottom: 72px;
+}
+
+.new-release__title {
+    color: $white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.new-release__movies-wrapper {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.new-release__movie-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.new-release__movie-title {
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.new-release__movie__description {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    h3 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
+    & span:first-of-type {
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 4px;
+        background-color: $red;
+        border-radius: 5px;
+    }
+}
+
+.new-release__movie-length {
+    border-radius: 5px;
+    border: 1px solid $red;
+    padding: 4px;
 }
