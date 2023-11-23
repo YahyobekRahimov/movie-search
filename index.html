@@ -1,44 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Document</title>
-</head>
-
-<body>
-
+  <body>
     <!-- Header section -->
 
     <header class="header">
-        <div class="container header__container">
-
+      <div class="container header__container">
+        <ul class="header__first-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Genre</a></li>
+          <li><a href="#">Country</a></li>
+        </ul>
+        <div class="header__search-input">
+          <input type="text" name="search" id="search" placeholder="Search movies..."/>
+          <button><img src="./images/search.svg" alt="search" /></button>
         </div>
+        <ul class="header__second-nav">
+          <li>
+            <a href="#"> Movies </a>
+          </li>
+          <li>
+            <a href="#"> Series </a>
+          </li>
+          <li>
+            <a href="#"> Animation </a>
+          </li>
+          <li>
+            <a href="#"> Login/Sign up <img src="/images/bell.svg" alt="Bell"></a>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <!-- Main -->
 
     <main>
-        <section class="">
-            <div class="container">
+      <section class="carousel">
+        <div class="container carousel__container">
+            <div class="carousel__buttons">
+                <button class="watch-now">
+                    Watch now
+                    <img src="./images/play.svg" alt="play">
+                </button>
+                <button class="watch-later">
+                    Watch later
+                    <img src="./images/time.svg" alt="time">
+                </button>
+            </div>
+            <h1 class="carousel__movie-title">Avatar: The Way of Water</h1>
+            <div class="carousel__movie-info">
+                <ul class="movie-info__movie-genres">
+                    <li>Action</li>
+                    <li>Adventure</li>
+                    <li>Science Fiction</li>
+                </ul>
+                <div class="movie-info__release-year">
+                    <img src="./images/year.svg" alt="calendar">
+                    2022
+                </div>
+                <div class="movie-info__length">
+                    <img src="./images/time1.svg" alt="clock">
+                    3:12:00
+                </div>
+                <div class="movie-info__rating">
+                    <img src="./images/star.svg" alt="star">
+                    8.5
+                </div>
+            </div>
+            <div class="carousel__movie-description">
+                Set more than a decade after the events of the first film, learn the story of the 
+                Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.
+            </div>
+
+        </div>
+      </section>
+
+      <section class="recent">
+        <div class="container recent__container">
+            <h2 class="recent__title">
+                Recently Updated
+            </h2>
+            <div class="recent__movies-wrapper">
+
+                <div class="recent__movies__block">
+                    <img src="./images/flash.png" alt="the flash">
+                    <div class="recent-movie__description-title">
+                        <h3 class="recent-movie__title">The Flash</h3>
+                        <span class="recent-movie__updated">
+                            Series/S 2/Ep 9
+                        </span>
+                        <span class="recent-movie__date">
+                            11/05/23
+                        </span>
+                    </div>
+                </div>
+
+                <div class="recent__movies__block">
+                    <img src="./images/flash.png" alt="the flash">
+                    <div class="recent-movie__description-title">
+                        <h3 class="recent-movie__title">The Flash</h3>
+                        <span class="recent-movie__updated">
+                            Series/S 2/Ep 9
+                        </span>
+                        <span class="recent-movie__date">
+                            11/05/23
+                        </span>
+                    </div>
+                </div>
+
+                <div class="recent__movies__block">
+                    <img src="./images/flash.png" alt="the flash">
+                    <div class="recent-movie__description-title">
+                        <h3 class="recent-movie__title">The Flash</h3>
+                        <span class="recent-movie__updated">
+                            Series/S 2/Ep 9
+                        </span>
+                        <span class="recent-movie__date">
+                            11/05/23
+                        </span>
+                    </div>
+                </div>
 
             </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="">
-            <div class="container">
+      <section class="trending">
+        <div class="container trending__container">
 
+            <h2 class="trending__title">Trending</h2>
+
+            <div class="trending__movies-wrapper">
+
+                <div class="trending__movie">
+                    <div class="trending__movie__img-wrapper">
+                        <img src="./images/medellin.png" alt="movie medellin">
+                        <div class="trending__movie-length">
+                            <img src="./images/time.svg" alt="clock">
+                            3:12:00
+                        </div>
+                        <div class="trending__movies-rating">
+                            <img src="./images/star.svg" alt="star">
+                            8.0
+                        </div>
+                        <img class="img-play-bigger" src="./images/play.svg" alt="play">
+                    </div>
+                    <div class="trending__movie__descriptinon">
+                        <h3 class="trending__movie__name">
+                            Medellin
+                        </h3>
+                        <ul class="trending__movie-categories">
+                            <li>Action</li>
+                            <li>Comedy</li>
+                        </ul>
+                    </div>
+
+                </div>
+                
             </div>
-        </section>
+
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container footer__container">
-
-        </div>
+      <div class="container footer__container"></div>
     </footer>
-</body>
-
+  </body>
+  <script src="index.js" type="module"></script>
 </html>
