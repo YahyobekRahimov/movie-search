@@ -207,7 +207,46 @@
 }
 
 .trending__title {
-    color: #FFF;
+    color: $white;
     font-size: 24px;
     font-weight: 700;
+}
+
+.trending__movies-wrapper {
+    display: flex;
+    gap: 33px;
+}
+
+.trending__movie {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.trending__movie__img-wrapper {
+    position: relative;
+}
+.img-play-bigger {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+.trending__movie-length {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    top: 8px;
+    left: 16px;
+    padding: 4px;
+}
+.trending__movies-rating {
+    
 }
