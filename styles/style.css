@@ -631,12 +631,14 @@ img {
 }
 
 .recent__movies-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
 .recent__movies__block {
   display: flex;
+  align-items: center;
   gap: 24px;
 }
 .recent__movies__block .recent-movie__description-title {
@@ -676,6 +678,13 @@ img {
 
 .trending__movie__img-wrapper {
   position: relative;
+}
+.trending__movie__img-wrapper .movie-img {
+  width: 352px;
+  height: 293px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
 }
 
 .img-play-bigger {
@@ -721,6 +730,10 @@ img {
   color: var(--white);
   font-size: 24px;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
 }
 .trending__movie__description ul {
   display: flex;
