@@ -1,0 +1,181 @@
+@import "./variables";
+@import "./normalize";
+@import "./fonts";
+@import "./general";
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+
+.header__container {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__first-nav,
+.header__second-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  a,
+  button {
+    border: none;
+    background: transparent;
+    color: $white;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease-in;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.header__second-nav {
+  & li:last-of-type button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &:hover img {
+      filter: invert(25%) sepia(100%) saturate(7468%) hue-rotate(3deg)
+        brightness(100%) contrast(120%);
+    }
+  }
+}
+
+.header__search-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding: 7px 12px;
+  border-radius: 25px;
+  width: 416px;
+  &:focus-within {
+    // border: 5px solid blue;
+    -webkit-box-shadow: 0px 0px 0px 4px rgb(63, 177, 205);
+    -moz-box-shadow: 0px 0px 0px 4px rgb(63, 177, 205);
+    box-shadow: 0px 0px 0px 4px rgb(25, 133, 205);
+  }
+  input {
+    border: none;
+    color: $black;
+    font-size: 16px;
+    width: 95%;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+  button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: transparent;
+    &:hover {
+      background-color: rgb(236, 236, 236);
+    }
+  }
+}
+
+// * Form section
+
+.form__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 70px;
+  border-radius: 20px;
+  background: #480146;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 20px;
+    input {
+      font-size: 20px;
+      width: 400px;
+      padding: 5px 10px;
+      background-color: #d9d9d9;
+      border: none;
+      border-radius: 12px;
+      color: black;
+      box-shadow: white 0px 0px 0px 1px inset, white 0px 0px 0px 1px;
+      outline: none;
+      &:focus {
+        outline: 4px solid rgb(50, 50, 250);
+        &::placeholder {
+          color: #d9d9d9;
+        }
+      }
+    }
+  }
+  input[type="submit"] {
+    border: 3px solid rgb(230, 230, 230);
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 24px;
+    transition: 0.2s ease-in all;
+    margin-top: 20px;
+    &:hover {
+      background-color: rgb(238, 236, 236);
+      color: #330031;
+      font-weight: 600;
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Chrome, Safari, Edge */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.already-have-account {
+    background: #480146;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    padding: 50px 70px;
+    border-radius: 20px;
+    min-width: 500px;
+    font-size: 25px;
+    a {
+        color: rgb(93, 209, 255);
+        transition: 0.2s ease-in all;
+        margin-left: 5px;
+        &:hover {
+            color: $red;
+        }
+    }
+}

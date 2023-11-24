@@ -13,12 +13,17 @@
     <header class="header">
       <div class="container header__container">
         <ul class="header__first-nav">
-          <li><a href="#">Home</a></li>
+          <li><a href="./index.html">Home</a></li>
           <li><a href="#">Genre</a></li>
           <li><a href="#">Country</a></li>
         </ul>
         <div class="header__search-input">
-          <input type="text" name="search" id="search" placeholder="Search movies..."/>
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search movies..."
+          />
           <button><img src="./images/search.svg" alt="search" /></button>
         </div>
         <ul class="header__second-nav">
@@ -32,7 +37,9 @@
             <a href="#"> Animation </a>
           </li>
           <li>
-            <a href="#"> Login/Sign up <img src="/images/bell.svg" alt="Bell"></a>
+            <button class="sign-up-login">
+              Login/Sign up <img src="/images/bell.svg" alt="Bell"
+            /></button>
           </li>
         </ul>
       </div>
@@ -43,390 +50,348 @@
     <main>
       <section class="carousel">
         <div class="container carousel__container">
-            <div class="carousel__buttons">
-                <button class="watch-now">
-                    Watch now
-                    <img src="./images/play.svg" alt="play">
-                </button>
-                <button class="watch-later">
-                    Watch later
-                    <img src="./images/time.svg" alt="time">
-                </button>
+          <div class="carousel__buttons">
+            <button class="watch-now">
+              Watch now
+              <img src="./images/play.svg" alt="play" />
+            </button>
+            <button class="watch-later">
+              Watch later
+              <img src="./images/time.svg" alt="time" />
+            </button>
+          </div>
+          <h1 class="carousel__movie-title">Avatar: The Way of Water</h1>
+          <div class="carousel__movie-info">
+            <ul class="movie-info__movie-genres">
+              <li>Action</li>
+              <li>Adventure</li>
+              <li>Science Fiction</li>
+            </ul>
+            <div class="movie-info__release-year">
+              <img src="./images/year.svg" alt="calendar" />
+              2022
             </div>
-            <h1 class="carousel__movie-title">Avatar: The Way of Water</h1>
-            <div class="carousel__movie-info">
-                <ul class="movie-info__movie-genres">
-                    <li>Action</li>
-                    <li>Adventure</li>
-                    <li>Science Fiction</li>
-                </ul>
-                <div class="movie-info__release-year">
-                    <img src="./images/year.svg" alt="calendar">
-                    2022
-                </div>
-                <div class="movie-info__length">
-                    <img src="./images/time1.svg" alt="clock">
-                    3:12:00
-                </div>
-                <div class="movie-info__rating">
-                    <img src="./images/star.svg" alt="star">
-                    8.5
-                </div>
+            <div class="movie-info__length">
+              <img src="./images/time1.svg" alt="clock" />
+              3:12:00
             </div>
-            <div class="carousel__movie-description">
-                Set more than a decade after the events of the first film, learn the story of the 
-                Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.
+            <div class="movie-info__rating">
+              <img src="./images/star.svg" alt="star" />
+              8.5
             </div>
-
+          </div>
+          <div class="carousel__movie-description">
+            Set more than a decade after the events of the first film, learn the
+            story of the Sully family (Jake, Neytiri, and their kids), the
+            trouble that follows them, the lengths they go to keep each other
+            safe, the battles they fight to stay alive, and the tragedies they
+            endure.
+          </div>
         </div>
       </section>
 
       <section class="recent">
         <div class="container recent__container">
-            <h2 class="recent__title">
-                Recently Updated
-            </h2>
-            <div class="recent__movies-wrapper">
-
-                <div class="recent__movies__block">
-                    <img src="./images/flash.png" alt="the flash">
-                    <div class="recent-movie__description-title">
-                        <h3 class="recent-movie__title">The Flash</h3>
-                        <span class="recent-movie__updated">
-                            Series/S 2/Ep 9
-                        </span>
-                        <span class="recent-movie__date">
-                            11/05/23
-                        </span>
-                    </div>
-                </div>
-
-                <div class="recent__movies__block">
-                    <img src="./images/flash.png" alt="the flash">
-                    <div class="recent-movie__description-title">
-                        <h3 class="recent-movie__title">The Flash</h3>
-                        <span class="recent-movie__updated">
-                            Series/S 2/Ep 9
-                        </span>
-                        <span class="recent-movie__date">
-                            11/05/23
-                        </span>
-                    </div>
-                </div>
-
-                <div class="recent__movies__block">
-                    <img src="./images/flash.png" alt="the flash">
-                    <div class="recent-movie__description-title">
-                        <h3 class="recent-movie__title">The Flash</h3>
-                        <span class="recent-movie__updated">
-                            Series/S 2/Ep 9
-                        </span>
-                        <span class="recent-movie__date">
-                            11/05/23
-                        </span>
-                    </div>
-                </div>
-
+          <h2 class="recent__title">Recently Updated</h2>
+          <div class="recent__movies-wrapper">
+            <div class="recent__movies__block">
+              <img src="./images/flash.png" alt="the flash" />
+              <div class="recent-movie__description-title">
+                <h3 class="recent-movie__title">The Flash</h3>
+                <span class="recent-movie__updated"> Series/S 2/Ep 9 </span>
+                <span class="recent-movie__date"> 11/05/23 </span>
+              </div>
             </div>
+
+            <div class="recent__movies__block">
+              <img src="./images/flash.png" alt="the flash" />
+              <div class="recent-movie__description-title">
+                <h3 class="recent-movie__title">The Flash</h3>
+                <span class="recent-movie__updated"> Series/S 2/Ep 9 </span>
+                <span class="recent-movie__date"> 11/05/23 </span>
+              </div>
+            </div>
+
+            <div class="recent__movies__block">
+              <img src="./images/flash.png" alt="the flash" />
+              <div class="recent-movie__description-title">
+                <h3 class="recent-movie__title">The Flash</h3>
+                <span class="recent-movie__updated"> Series/S 2/Ep 9 </span>
+                <span class="recent-movie__date"> 11/05/23 </span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="trending">
         <div class="container trending__container">
+          <h2 class="trending__title">Trending</h2>
 
-            <h2 class="trending__title">Trending</h2>
-
-            <div class="trending__movies-wrapper">
-
-                <div class="trending__movie">
-                    <div class="trending__movie__img-wrapper">
-                        <img src="./images/medellin.png" alt="movie medellin">
-                        <div class="trending__movie-length">
-                            <img src="./images/time.svg" alt="clock">
-                            3:12:00
-                        </div>
-                        <div class="trending__movies-rating">
-                            <img src="./images/star.svg" alt="star">
-                            8.0
-                        </div>
-                        <img class="img-play-bigger" src="./images/play.svg" alt="play">
-                    </div>
-                    <div class="trending__movie__description">
-                        <h3 class="trending__movie__name">
-                            Medellin
-                        </h3>
-                        <ul class="trending__movie-categories">
-                            <li>Action</li>
-                            <li>Comedy</li>
-                        </ul>
-                    </div>
-
+          <div class="trending__movies-wrapper">
+            <div class="trending__movie">
+              <div class="trending__movie__img-wrapper">
+                <img src="./images/medellin.png" alt="movie medellin" />
+                <div class="trending__movie-length">
+                  <img src="./images/time.svg" alt="clock" />
+                  3:12:00
                 </div>
-                <div class="trending__movie">
-                    <div class="trending__movie__img-wrapper">
-                        <img src="./images/medellin.png" alt="movie medellin">
-                        <div class="trending__movie-length">
-                            <img src="./images/time.svg" alt="clock">
-                            3:12:00
-                        </div>
-                        <div class="trending__movies-rating">
-                            <img src="./images/star.svg" alt="star">
-                            8.0
-                        </div>
-                        <img class="img-play-bigger" src="./images/play.svg" alt="play">
-                    </div>
-                    <div class="trending__movie__description">
-                        <h3 class="trending__movie__name">
-                            Medellin
-                        </h3>
-                        <ul class="trending__movie-categories">
-                            <li>Action</li>
-                            <li>Comedy</li>
-                        </ul>
-                    </div>
+                <div class="trending__movies-rating">
+                  <img src="./images/star.svg" alt="star" />
+                  8.0
                 </div>
-                <div class="trending__movie">
-                    <div class="trending__movie__img-wrapper">
-                        <img src="./images/medellin.png" alt="movie medellin">
-                        <div class="trending__movie-length">
-                            <img src="./images/time.svg" alt="clock">
-                            3:12:00
-                        </div>
-                        <div class="trending__movies-rating">
-                            <img src="./images/star.svg" alt="star">
-                            8.0
-                        </div>
-                        <img class="img-play-bigger" src="./images/play.svg" alt="play">
-                    </div>
-                    <div class="trending__movie__description">
-                        <h3 class="trending__movie__name">
-                            Medellin
-                        </h3>
-                        <ul class="trending__movie-categories">
-                            <li>Action</li>
-                            <li>Comedy</li>
-                        </ul>
-                    </div>
-                </div>
+                <img
+                  class="img-play-bigger"
+                  src="./images/play.svg"
+                  alt="play"
+                />
+              </div>
+              <div class="trending__movie__description">
+                <h3 class="trending__movie__name">Medellin</h3>
+                <ul class="trending__movie-categories">
+                  <li>Action</li>
+                  <li>Comedy</li>
+                </ul>
+              </div>
             </div>
+            <div class="trending__movie">
+              <div class="trending__movie__img-wrapper">
+                <img src="./images/medellin.png" alt="movie medellin" />
+                <div class="trending__movie-length">
+                  <img src="./images/time.svg" alt="clock" />
+                  3:12:00
+                </div>
+                <div class="trending__movies-rating">
+                  <img src="./images/star.svg" alt="star" />
+                  8.0
+                </div>
+                <img
+                  class="img-play-bigger"
+                  src="./images/play.svg"
+                  alt="play"
+                />
+              </div>
+              <div class="trending__movie__description">
+                <h3 class="trending__movie__name">Medellin</h3>
+                <ul class="trending__movie-categories">
+                  <li>Action</li>
+                  <li>Comedy</li>
+                </ul>
+              </div>
+            </div>
+            <div class="trending__movie">
+              <div class="trending__movie__img-wrapper">
+                <img src="./images/medellin.png" alt="movie medellin" />
+                <div class="trending__movie-length">
+                  <img src="./images/time.svg" alt="clock" />
+                  3:12:00
+                </div>
+                <div class="trending__movies-rating">
+                  <img src="./images/star.svg" alt="star" />
+                  8.0
+                </div>
+                <img
+                  class="img-play-bigger"
+                  src="./images/play.svg"
+                  alt="play"
+                />
+              </div>
+              <div class="trending__movie__description">
+                <h3 class="trending__movie__name">Medellin</h3>
+                <ul class="trending__movie-categories">
+                  <li>Action</li>
+                  <li>Comedy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="new-release">
         <div class="container new-release__container">
-
-            <h2 class="new-release__title">New release - Movies</h2>
-            <div class="new-release__movies-wrapper">
-
-                <div class="new-release__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="new-release__movie__description">
-                        <h3 class="new-release__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="new-release__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="new-release__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="new-release__movie__description">
-                        <h3 class="new-release__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="new-release__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                
+          <h2 class="new-release__title">New release - Movies</h2>
+          <div class="new-release__movies-wrapper">
+            <div class="new-release__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="new-release__movie__description">
+                <h3 class="new-release__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="new-release__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
             </div>
-            
+
+            <div class="new-release__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="new-release__movie__description">
+                <h3 class="new-release__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="new-release__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-
       <section class="new-release-series">
         <div class="container new-release-series__container">
-
-            <h2 class="new-release-series__title">New release - Series</h2>
-            <div class="new-release-series__movies-wrapper">
-
-                <div class="new-release-series__movie-block">
-                    <img src="./images/black-night.png" alt="black night">
-                    <div class="new-release-series__movie__description">
-                        <h3 class="new-release-series__movie-title">
-                            Black knight
-                        </h3>
-                        <span>HD</span>
-                        <span class="new-release-series__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            Season 1
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="new-release-series__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="new-release-series__movie__description">
-                        <h3 class="new-release-series__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="new-release-series__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                
+          <h2 class="new-release-series__title">New release - Series</h2>
+          <div class="new-release-series__movies-wrapper">
+            <div class="new-release-series__movie-block">
+              <img src="./images/black-night.png" alt="black night" />
+              <div class="new-release-series__movie__description">
+                <h3 class="new-release-series__movie-title">Black knight</h3>
+                <span>HD</span>
+                <span class="new-release-series__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  Season 1
+                </span>
+              </div>
             </div>
-            
+
+            <div class="new-release-series__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="new-release-series__movie__description">
+                <h3 class="new-release-series__movie-title">
+                  John Wick: Chapter 6
+                </h3>
+                <span>HD</span>
+                <span class="new-release-series__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="recommended">
         <div class="container recommended__container">
-            <div class="recommended__title-selection">
-                <h2 class="recommended__title">Recommended</h2>
-    
-                <ul class="recommended__options">
-                    <li>
-                        <button class="recommended__options-movies recommended__option--active">Movies</button>
-                    </li>
-                    <li>
-                        <button class="recommended__options-series">Series</button>
-                    </li>
-                    <li>
-                        <button class="recommended__options-animation">Animation</button>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="recommended__movies-wrapper">
+          <div class="recommended__title-selection">
+            <h2 class="recommended__title">Recommended</h2>
 
-                <div class="recommended__movie-block">
-                    <img src="./images/black-night.png" alt="black night">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            Black knight
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            Season 1
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="recommended__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                <div class="recommended__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                <div class="recommended__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                <div class="recommended__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                <div class="recommended__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                <div class="recommended__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                <div class="recommended__movie-block">
-                    <img src="./images/john-wick.png" alt="john-wick">
-                    <div class="recommended__movie__description">
-                        <h3 class="recommended__movie-title">
-                            John Wick: Chapter 6
-                        </h3>
-                        <span>HD</span>
-                        <span class="recommended__movie-length">
-                            <img src="./images/time1.svg" alt="time">
-                            3:12:00
-                        </span>
-                    </div>
-                </div>
-                
+            <ul class="recommended__options">
+              <li>
+                <button
+                  class="recommended__options-movies recommended__option--active"
+                >
+                  Movies
+                </button>
+              </li>
+              <li>
+                <button class="recommended__options-series">Series</button>
+              </li>
+              <li>
+                <button class="recommended__options-animation">
+                  Animation
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="recommended__movies-wrapper">
+            <div class="recommended__movie-block">
+              <img src="./images/black-night.png" alt="black night" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">Black knight</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  Season 1
+                </span>
+              </div>
             </div>
-            
+
+            <div class="recommended__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+            <div class="recommended__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+            <div class="recommended__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+            <div class="recommended__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+            <div class="recommended__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+            <div class="recommended__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+            <div class="recommended__movie-block">
+              <img src="./images/john-wick.png" alt="john-wick" />
+              <div class="recommended__movie__description">
+                <h3 class="recommended__movie-title">John Wick: Chapter 6</h3>
+                <span>HD</span>
+                <span class="recommended__movie-length">
+                  <img src="./images/time1.svg" alt="time" />
+                  3:12:00
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
     </main>
 
-    <footer>
-      <div class="container footer__container"></div>
-    </footer>
+
   </body>
   <script src="index.js" type="module"></script>
 </html>

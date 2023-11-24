@@ -22,7 +22,10 @@
   display: flex;
   justify-content: center;
   gap: 16px;
-  a {
+  a,
+  button {
+    border: none;
+    background: transparent;
     color: $white;
     color: #fff;
     font-size: 16px;
@@ -35,7 +38,7 @@
 }
 
 .header__second-nav {
-  & li:last-of-type a {
+  & li:last-of-type button {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -92,6 +95,7 @@
   padding-bottom: 72px;
   background-image: url("../images/avatar.png");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .carousel__buttons {

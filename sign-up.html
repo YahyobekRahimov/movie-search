@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="./styles/sign-up.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container header__container">
+          <ul class="header__first-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">Country</a></li>
+          </ul>
+          <div class="header__search-input">
+            <input type="text" name="search" id="search" placeholder="Search movies..."/>
+            <button><img src="./images/search.svg" alt="search" /></button>
+          </div>
+          <ul class="header__second-nav">
+            <li>
+              <a href="#"> Movies </a>
+            </li>
+            <li>
+              <a href="#"> Series </a>
+            </li>
+            <li>
+              <a href="#"> Animation </a>
+            </li>
+            <li>
+              <button class="sign-up-login"> Login/Sign up <img src="/images/bell.svg" alt="Bell"></button>
+            </li>
+          </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="container form__container">
+            <form class="form">
+                <label  for="username">
+                    Username
+                    <input autofocus type="text" id="username" placeholder="Username">
+                </label>
+                <label for="email">
+                    Email
+                    <input type="text" name="email" id="email" placeholder="Email">
+                </label>
+                <label for="password">
+                    Password
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </label>                
+                <label for="confirmPassword">
+                    Confirm Password
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password">
+                </label>
+
+                <input type="submit" value="Submit">
+            </form>
+            <div class="already-have-account">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
