@@ -197,6 +197,9 @@
     gap: 24px;
     position: relative;
     cursor: pointer;
+    * {
+      pointer-events: none;
+    }
     &::after {
       content: '';
       position: absolute;
@@ -243,13 +246,16 @@
     gap: 33px;
 }
 
-.trending__movie {
+.trending__movie__block {
     display: flex;
     flex-direction: column;
     gap: 8px;
     cursor: pointer;
     position: relative;
     max-width: 352px;
+    * {
+      pointer-events: none;
+    }
     &::after {
       content: '';
       position: absolute;
@@ -371,6 +377,9 @@
     white-space: nowrap;
     position: relative;
     cursor: pointer;
+    * {
+      pointer-events: none;
+    }
     &::after {
       content: '';
       position: absolute;

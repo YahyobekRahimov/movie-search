@@ -24,7 +24,7 @@ const optionsNewMovies = {
   }
 };
 
-const newReleaseMovies = await fetchMovies(urlNewMovies, optionsNewMovies)
+const newReleaseMovies = await fetchMovies(urlNewMovies, optionsNewMovies);
 
 const TRENDING_MOVIES_WRAPPER = document.querySelector('.trending__movies-wrapper');
 
@@ -40,7 +40,7 @@ for (let i = 1; i <= 6; i++) {
       listOfGenres += `<li>${genre}</li>`
     })
     let card = `
-                <div class="trending__movie">
+                <div class="trending__movie__block" id='${element.id}'>
                   <div class="trending__movie__img-wrapper">
                     <img width='352' height='293' class='movie-img' src="${baseImgUrl}${element.poster_path}" alt="" />
                     <div class="trending__movies-rating">
@@ -63,7 +63,7 @@ for (let i = 1; i <= 6; i++) {
                 `
     fakeDom += card;
 }
-TRENDING_MOVIES_WRAPPER.innerHTML += fakeDom;
+TRENDING_MOVIES_WRAPPER.innerHTML = fakeDom;
 
 const RECENT_MOVIES_WRAPPER = document.querySelector('.recent__movies-wrapper')
 
@@ -75,7 +75,7 @@ for (let i = 0; i < 6; i++) {
   let releaseDate = result.release_date;
   let rating = result.vote_average;
   let card = `
-            <div class="recent__movies__block">
+            <div class="recent__movies__block" id='${result.id}'>
               <img width='100' src="${image}" alt="" />
               <div class="recent-movie__description-title">
                 <h3 class="recent-movie__title">${title}</h3>
@@ -94,7 +94,7 @@ const NEW_MOVIES_WRAPPER = document.querySelector('.new-release__movies-wrapper'
 
 for (let i = 0; i < 8; i++) {
   const element = newReleaseMovies.results[i];
-  let card = `<div class="new-release__movie-block">
+  let card = `<div class="new-release__movie-block movie" id='${element.id}'>
                 <img src="${baseImgUrl}${element.poster_path}" alt="">
                 <div class="new-release__movie__description">
                   <h3 class="new-release__movie-title">${element.original_title}</h3>
@@ -119,14 +119,13 @@ const optionsNewSeries = {
 };
 
 const newReleaseSeries = await fetchMovies(urlNewSeries, optionsNewSeries)
-console.log('newReleaseSeries :', newReleaseSeries);
 
 const NEW_SERIES_WRAPPER = document.querySelector('.new-release-series__movies-wrapper');
 
 fakeDom = '';
 for (let i = 0; i < 8; i++) {
   const element = newReleaseSeries.results[i];
-  let card = `<div class="new-release__movie-block">
+  let card = `<div class="new-release__movie-block series" id='${element.id}'>
                 <img src="${baseImgUrl}${element.poster_path}" alt="">
                 <div class="new-release__movie__description">
                   <h3 class="new-release__movie-title">${element.original_name}</h3>
@@ -178,7 +177,7 @@ function renderRecommended(arr) {
   let fakeDom = '';
   for (let i = 0; i < 16; i++) {
     const element = arr.results[i];
-    let card = `<div class="new-release__movie-block">
+    let card = `<div class="new-release__movie-block recommended" id='${element.id}'>
                   <img src="${baseImgUrl}${element.poster_path}" alt="">
                   <div class="new-release__movie__description">
                     <h3 class="new-release__movie-title">${element.original_title}</h3>
@@ -193,3 +192,37 @@ function renderRecommended(arr) {
   document.querySelector('.recommended__movies-wrapper').innerHTML = fakeDom;
 }
 
+// ! Listener to the whole main element so that JS can listen to the clicks on movies
+
+document.querySelector('main')
+  .addEventListener('click', function(event) {
+    if (!event.target.classList[0].includes('block')) {
+      return;
+    }
+    const data = determineDataSource(event.target);
+    localStorage.setItem('details', JSON.stringify(data));
+    window.location.href = `./details.html?id=${event.target.id}`
+  })
+
+function determineDataSource(target) {
+  const firstClass = target.classList[0]
+  let data = null;
+  if (firstClass.includes('trending')) {
+    data = topRatedMovies.results;
+  } else if (firstClass.includes('recent')) {
+    data = popularMovies.results;
+  } else if (target.classList[1] == 'recommended') {
+    if (SERIES_BUTTON.classList[1] == 'recommended__option--active') {
+      data = recommendedSeries.results;
+    } else if (MOVIES_BUTTON.classList[1] == 'recommended__option--active') {
+      data = recommendedMovies.results;
+    } 
+  } else if (firstClass.includes('new-release')) {
+    if (target.classList[1] == 'movie') {
+      data = newReleaseMovies.results;
+    } else if (target.classList[1] == 'series') {
+      data = newReleaseSeries.results;
+    }
+  } 
+  return data;
+}
