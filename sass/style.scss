@@ -195,6 +195,24 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100%;
+      background: rgb(2,0,36);
+      background: linear-gradient(180deg, rgba(2,0,36,0) 31%, rgba(0,212,255,1) 100%);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: 0.3s ease-in all;
+    }
+    &:hover::after{
+      transform: scaleY(1);
+    }
     .recent-movie__description-title {
         display: flex;
         flex-direction: column;
@@ -220,7 +238,8 @@
 }
 
 .trending__movies-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 33px;
 }
 
@@ -229,6 +248,27 @@
     flex-direction: column;
     gap: 8px;
     cursor: pointer;
+    position: relative;
+    max-width: 352px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 293px;
+      background: rgb(2,0,36);
+      background: linear-gradient(180deg, rgba(2,0,36,0) 31%, rgba(0,212,255,1) 100%);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: 0.3s ease-in all;
+    }
+    &:hover::after{
+      transform: scaleY(1);
+    }
+    &:hover .img-play-bigger {
+      opacity: 0.9;
+    }
 }
 
 .trending__movie__img-wrapper {
@@ -252,6 +292,8 @@
     margin-bottom: auto;
     margin-top: auto;
     width: 60px;
+    opacity: 0;
+    transition: 0.2s ease-in all;
 }
 .trending__movie-length {
     position: absolute;
@@ -316,7 +358,8 @@
 }
 
 .new-release__movies-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 32px;
     align-items: center;
 }
@@ -325,6 +368,25 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 344px;
+      background: rgb(2,0,36);
+      background: linear-gradient(180deg, rgba(2,0,36,0) 31%, rgba(0,212,255,1) 100%);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: 0.3s ease-in all;
+    }
+    &:hover::after{
+      transform: scaleY(1);
+    }
     & > img {
         width: 256px;
         height: 344px;
@@ -335,6 +397,7 @@
     color: $white;
     font-size: 16px;
     font-weight: 500;
+    width: 100px;
 }
 
 .new-release__movie__description {
@@ -378,7 +441,8 @@
 }
 
 .new-release-series__movies-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 32px;
     align-items: center;
 }

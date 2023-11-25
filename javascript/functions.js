@@ -28,15 +28,8 @@ async function fetchTopRatedMovies() {
     }
 }
 
-async function fetchPopularMovies() {
+async function fetchMovies(url, options) {
     try {
-        const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
-        const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzM2MwYWZlMTYyNjAwNWM5MzAzNDMyMzVjNTYzYWQ2MiIsInN1YiI6IjY1NjA2NGVmMmIxMTNkMDEwY2MwYjU2OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.U_sA7zS9sks9WxpONrqC-vdjwqgn8Z7qc2TayDs7Vmg'
-        }};
         const res = await fetch(url, options)
         if (!res.ok) {
             throw new Error(`Failed to fetch data. Status: ${res.status}`)
@@ -71,4 +64,4 @@ function getGenresNames(genresIDS, movieGenres, seriesGenres) {
     return genreNames; 
 }
 
-export { handleLoginSignupButton, fetchTopRatedMovies, getGenresNames, fetchPopularMovies };
+export { handleLoginSignupButton, fetchTopRatedMovies, getGenresNames, fetchMovies };

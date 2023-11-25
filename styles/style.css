@@ -640,6 +640,24 @@ img {
   display: flex;
   align-items: center;
   gap: 24px;
+  position: relative;
+  cursor: pointer;
+}
+.recent__movies__block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 31%, rgb(0, 212, 255) 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: 0.3s ease-in all;
+}
+.recent__movies__block:hover::after {
+  transform: scaleY(1);
 }
 .recent__movies__block .recent-movie__description-title {
   display: flex;
@@ -665,7 +683,8 @@ img {
 }
 
 .trending__movies-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 33px;
 }
 
@@ -674,6 +693,27 @@ img {
   flex-direction: column;
   gap: 8px;
   cursor: pointer;
+  position: relative;
+  max-width: 352px;
+}
+.trending__movie::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 293px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 31%, rgb(0, 212, 255) 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: 0.3s ease-in all;
+}
+.trending__movie:hover::after {
+  transform: scaleY(1);
+}
+.trending__movie:hover .img-play-bigger {
+  opacity: 0.9;
 }
 
 .trending__movie__img-wrapper {
@@ -698,6 +738,8 @@ img {
   margin-bottom: auto;
   margin-top: auto;
   width: 60px;
+  opacity: 0;
+  transition: 0.2s ease-in all;
 }
 
 .trending__movie-length {
@@ -763,7 +805,8 @@ img {
 }
 
 .new-release__movies-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   align-items: center;
 }
@@ -772,6 +815,25 @@ img {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+}
+.new-release__movie-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 344px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 31%, rgb(0, 212, 255) 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: 0.3s ease-in all;
+}
+.new-release__movie-block:hover::after {
+  transform: scaleY(1);
 }
 .new-release__movie-block > img {
   width: 256px;
@@ -782,6 +844,7 @@ img {
   color: var(--white);
   font-size: 16px;
   font-weight: 500;
+  width: 100px;
 }
 
 .new-release__movie__description {
@@ -823,7 +886,8 @@ img {
 }
 
 .new-release-series__movies-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   align-items: center;
 }
