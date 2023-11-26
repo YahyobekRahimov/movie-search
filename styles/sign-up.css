@@ -623,4 +623,8 @@ input::-webkit-inner-spin-button {
   color: var(--red);
 }
 
+.error {
+  color: red;
+}
+
 /*# sourceMappingURL=sign-up.css.map */

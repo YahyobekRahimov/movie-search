@@ -1,8 +1,25 @@
 import { movieGenres, seriesGenres } from "./javascript/constants.js";
 import { handleLoginSignupButton, fetchTopRatedMovies, getGenresNames, fetchMovies } from "./javascript/functions.js";
 
-handleLoginSignupButton();
+const SIGN_UP_LOGIN_BUTTON = document.querySelector('.sign-up-login');
+const USER_PROFILE_BUTTON = document.querySelector('.user-button');
+if (handleLoginSignupButton()) {
+  SIGN_UP_LOGIN_BUTTON.style.display = 'none';
+  USER_PROFILE_BUTTON.style.display = 'inline';
+};
 
+USER_PROFILE_BUTTON.addEventListener('click', () => {
+  document.querySelector('.user-dropdown')
+        .classList.toggle('display-flex');
+})
+document.querySelector('body').addEventListener('click', function(event) {
+  let firstClass = event.target.classList[0];
+  if (firstClass == 'user-dropdown' || firstClass == 'dropdown-profile' || firstClass == 'dropdown-favorites') {
+    return;
+  }
+  if (firstClass == 'user-button' || firstClass == 'dropdown-logout') return;
+  document.querySelector('.user-dropdown').classList.remove('display-flex');
+}) 
 const topRatedMovies = await fetchTopRatedMovies();
 
 const urlPopular = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
@@ -12,6 +29,21 @@ headers: {
     accept: 'application/json',
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzM2MwYWZlMTYyNjAwNWM5MzAzNDMyMzVjNTYzYWQ2MiIsInN1YiI6IjY1NjA2NGVmMmIxMTNkMDEwY2MwYjU2OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.U_sA7zS9sks9WxpONrqC-vdjwqgn8Z7qc2TayDs7Vmg'
 }};
+
+const LOGOUT = document.querySelector('.dropdown-logout');
+LOGOUT.addEventListener('click', function() {
+  clearAllCookies();
+  window.location.reload();
+})
+function clearAllCookies() {
+  let cookies = document.cookie.split('; ');
+  cookies.forEach(cookie => {
+    cookie = cookie.trim();
+    const equalsSignIndex = cookie.indexOf('=');
+    const cookieName = equalsSignIndex > -1 ? cookie.substring(0, equalsSignIndex) : cookie;
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
+  })
+}
 
 const popularMovies = await fetchMovies(urlPopular, optionsPopular);
 

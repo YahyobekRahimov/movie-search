@@ -1,9 +1,39 @@
 function handleLoginSignupButton() {
-    const SIGN_UP_LOGIN_BUTTON = document.querySelector('.sign-up-login');
-    SIGN_UP_LOGIN_BUTTON.addEventListener('click', function() {
-        const hasAccount = JSON.parse(localStorage.getItem('hasAccount')) ?? false;
-        window.location.href = hasAccount ? 'login.html' : 'sign-up.html';
-    })
+  const urlParams = new URLSearchParams(window.location.search);
+  let userId = urlParams.get('id');
+  if (!userId) {
+    userId = getCookie('id');
+  }
+  const users = JSON.parse(localStorage.getItem("users")) ?? [];
+  if (users.length) {
+    for (let i = 0; i < users.length; i++) {
+      const user = users[i];
+      if (user.id == userId) {
+        if (user.email === getCookie('email')) {
+          console.log('found the user');
+          return user;
+        }
+      }
+    }
+  }
+  const SIGN_UP_LOGIN_BUTTON = document.querySelector('.sign-up-login');
+  SIGN_UP_LOGIN_BUTTON.addEventListener('click', function() {
+      const hasAccount = JSON.parse(localStorage.getItem('hasAccount')) ?? false;
+      window.location.href = hasAccount ? 'login.html' : 'sign-up.html';
+  })
+  return false;
+}
+function getCookie(cookieName) {
+  const name = `${cookieName}=`;
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookieArray = decodedCookie.split(';');
+
+  for (let i = 0; i < cookieArray.length; i++) {
+    let cookie = cookieArray[i].trim();
+    if (cookie.startsWith(name)) {
+      return cookie.substring(name.length);
+    }
+  }
 }
 
 async function fetchTopRatedMovies() {
