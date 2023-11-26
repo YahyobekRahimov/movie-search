@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genre</title>
+  <link rel="stylesheet" href="./styles/genre.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <ul class="header__first-nav">
+        <li>
+          <a href="./index.html">Home</a>
+        </li>
+        <li>
+          <span>Genre</span>
+          <ul class="genres-list">
+          </ul>
+        </li>
+        <li>
+          <a href="#">Country</a>
+        </li>
+      </ul>
+      <div class="header__search-input">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search movies..."
+        />
+        <button><img src="./images/search.svg" alt="search" /></button>
+      </div>
+      <ul class="header__second-nav">
+        <li>
+          <a href="#"> Movies </a>
+        </li>
+        <li>
+          <a href="#"> Series </a>
+        </li>
+        <li class="user-item">
+          <button class="sign-up-login">
+            Login/Sign up <img src="./images/bell.svg" alt="Bell"
+          /></button>
+          <button class="user-button">
+            <img src="./images/user.svg" alt="user">
+          </button>
+          <ul class="user-dropdown">
+            <li class="dropdown-profile">Profile</li>
+            <li class="dropdown-favorites">Favorites</li>
+            <li class="dropdown-logout">Log out</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <main>
+    <section>
+      <div class="container movies-genre__container">
+
+      </div>
+    </section>
+  </main>
+
+  <script src="./javascript/header.js" type="module" defer></script>
+<script src="./javascript/genres.js" type="module"></script>
+</body>
+</html>

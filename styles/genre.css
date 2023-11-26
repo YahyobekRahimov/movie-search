@@ -646,93 +646,97 @@ img {
   pointer-events: none;
 }
 
-.form__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 30px;
+.movies-genre__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 50px 70px;
-  border-radius: 20px;
-  background: #480146;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+.new-release {
+  margin-top: 72px;
+  margin-bottom: 72px;
 }
-.form label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 20px;
-}
-.form label input {
-  font-size: 20px;
-  width: 400px;
-  padding: 5px 10px;
-  background-color: #d9d9d9;
-  border: none;
-  border-radius: 12px;
-  color: black;
-  box-shadow: white 0px 0px 0px 1px inset, white 0px 0px 0px 1px;
-  outline: none;
-}
-.form label input:focus {
-  outline: 4px solid rgb(50, 50, 250);
-}
-.form label input:focus::placeholder {
-  color: #d9d9d9;
-}
-.form input[type=submit] {
-  border: 3px solid rgb(230, 230, 230);
-  background-color: transparent;
-  padding: 10px 20px;
+
+.new-release__title {
+  color: var(--white);
   font-size: 24px;
-  transition: 0.2s ease-in all;
-  margin-top: 20px;
-}
-.form input[type=submit]:hover {
-  background-color: rgb(238, 236, 236);
-  color: #330031;
-  font-weight: 600;
-  transform: translateY(-5px);
+  font-weight: 700;
+  margin-bottom: 24px;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+.new-release__movies-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  align-items: center;
 }
 
-/* Chrome, Safari, Edge */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.new-release__movie-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+}
+.new-release__movie-block * {
+  pointer-events: none;
+}
+.new-release__movie-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 256px;
+  height: 344px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 31%, rgb(0, 212, 255) 100%);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: 0.3s ease-in all;
+}
+.new-release__movie-block:hover::after {
+  transform: scaleY(1);
+}
+.new-release__movie-block > img {
+  width: 256px;
+  height: 344px;
 }
 
-.already-have-account {
-  text-align: center;
-  background: #480146;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  padding: 50px 70px;
-  border-radius: 20px;
-  min-width: 500px;
-  font-size: 25px;
-}
-.already-have-account a {
-  color: rgb(93, 209, 255);
-  transition: 0.2s ease-in all;
-  margin-left: 5px;
-}
-.already-have-account a:hover {
-  color: var(--red);
+.new-release__movie-title {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  width: 100px;
 }
 
-.error {
-  color: red;
+.new-release__movie__description {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.new-release__movie__description h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+.new-release__movie__description span:first-of-type {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 4px;
+  background-color: var(--red);
+  border-radius: 5px;
 }
 
-/*# sourceMappingURL=login.css.map */
+.new-release__movie-length {
+  border-radius: 5px;
+  border: 1px solid var(--red);
+  padding: 4px;
+}
+
+.genres-list {
+  z-index: 1;
+}
+
+/*# sourceMappingURL=genre.css.map */

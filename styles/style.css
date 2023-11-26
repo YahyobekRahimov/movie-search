@@ -477,8 +477,10 @@ img {
 }
 .header__first-nav a,
 .header__first-nav button,
+.header__first-nav li > span,
 .header__second-nav a,
-.header__second-nav button {
+.header__second-nav button,
+.header__second-nav li > span {
   border: none;
   background: transparent;
   color: var(--white);
@@ -486,12 +488,41 @@ img {
   font-size: 16px;
   font-weight: 600;
   transition: all 0.2s ease-in;
+  cursor: pointer;
 }
 .header__first-nav a:hover,
 .header__first-nav button:hover,
+.header__first-nav li > span:hover,
 .header__second-nav a:hover,
-.header__second-nav button:hover {
+.header__second-nav button:hover,
+.header__second-nav li > span:hover {
   color: var(--red);
+}
+
+.header__first-nav > :nth-child(2) {
+  position: relative;
+}
+.header__first-nav > :nth-child(2):hover .genres-list {
+  display: grid;
+}
+.header__first-nav .genres-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 10px;
+  position: absolute;
+  background-color: rgb(3, 3, 62);
+  padding: 10px 15px;
+  width: max-content;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  display: none;
+}
+.header__first-nav .genres-list li {
+  cursor: pointer;
+}
+.header__first-nav .genres-list li:hover {
+  color: red;
 }
 
 .user-item {
@@ -554,6 +585,7 @@ img {
   padding: 7px 12px;
   border-radius: 25px;
   width: 416px;
+  position: relative;
 }
 .header__search-input:focus-within {
   -webkit-box-shadow: 0px 0px 0px 4px rgb(63, 177, 205);
@@ -581,6 +613,37 @@ img {
 }
 .header__search-input button:hover {
   background-color: rgb(236, 236, 236);
+}
+
+.list-of-movies-searched {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #523a74;
+  color: white;
+  white-space: nowrap;
+}
+.list-of-movies-searched li {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  gap: 30px;
+  min-width: 500px;
+}
+.list-of-movies-searched li:hover {
+  background-color: #332942;
+  cursor: pointer;
+}
+.list-of-movies-searched .special-class * {
+  pointer-events: none;
 }
 
 .carousel {
